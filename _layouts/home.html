@@ -30,7 +30,7 @@
         font-size: 1.2rem;
       }
       #hero {
-        height: 100vh;
+	    height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,6 +38,17 @@
         text-align: center;
         padding: 2rem;
       }
+	  .social {
+	    display: flex;
+        justify-content: center;
+        align-items: center;
+	  }
+	  .social a{
+        color: #f5f5f5;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+		}
       #hero h2 {
         font-size: 3rem;
         margin: 0;
@@ -59,19 +70,8 @@
         background-color: #121212;
         color: #f5f5f5;
       }
-      #social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 2rem;
-      }
-      #social a {
-        color: #f5f5f5;
-        margin: 0 1rem;
-        text-decoration: none;
-        font-size: 1.2rem;
-      }
       #footer {
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -86,10 +86,12 @@
         text-decoration: none;
         font-size: 1.2rem;
       }
+
     </style>
   </head>
   <body>
     <header id="header">
+
       <h1>Pegmode</h1>
       <nav>
         <a href="#">About</a>
@@ -99,19 +101,18 @@
       </nav>
     </header>
     <section id="hero">
-      <h2>Welcome to my portfolio</h2>
+      <h2>Daniel Chu</h2>
       <p>Computer Science student, vintage computer programmer and retro game console musician</p>
-      <a href="#">View my work</a>
-    </section>
-<section id="social">
-  <a href="https://twitter.com/Pegmode2"><i class="fab fa-twitter"></i> Twitter</a>
+	  <div class="social">
+	    <a href="https://twitter.com/Pegmode2"><i class="fab fa-twitter"></i> Twitter</a>
   <a href="https://www.youtube.com/channel/UCtQcrCQGT-pClAvZUDwagZA"><i class="fab fa-youtube"></i> Youtube</a>
   <a href="https://github.com/Pegmode"><i class="fab fa-github"></i> Github</a>
-  <a href="https://soundcloud.com/pegmode_dc"><i class="fab fa-github"></i> Soundcloud</a>
-   <a href="https://pegmodedc.bandcamp.com/album/eastern-retrograde-memories"><i class="fab fa-bandcamp"></i> Bandcamp</a>
+  <a href="https://soundcloud.com/pegmode_dc"><i class="fab fa-soundcloud"></i> Soundcloud</a>
+  <a href="https://pegmodedc.bandcamp.com/"><i class="fab fa-bandcamp"></i> Bandcamp</a>
+	  </div>
+	  
+    </section>
 
-
-</section>
 
 <footer id="footer">
   <p>&copy; 2023 All rights reserved.</p>
@@ -120,6 +121,7 @@
     <a href="#">Terms of Use</a>
   </nav>
 </footer>
+
  </body>
 </html>
 	  
