@@ -2,13 +2,26 @@
 <html>
   <head>
     <title>Projects</title>
+    <link rel="stylesheet" href="mainStyle.css">
     <style>
-      body {
-        background-color: #121212;
+      #navHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      #navHeader h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      #navHeader nav a {
         color: #f5f5f5;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+      h2 {
+        text-align: center;
       }
       table {
         border-collapse: collapse;
@@ -34,36 +47,91 @@
     </style>
   </head>
   <body>
-    <header>
+    <header id="navHeader">
       <h1>My Projects</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Music</a>
+        <a href="projects.html">Projects</a>
+        <a href="#">Blog</a>
+      </nav>
     </header>
-    <table>
+    <ul>
+      <li><a href="#GBrom">Game Boy ROMs</a></li>
+      <li><a href="#School">University Class projects</a></li>
+      <li><a href="#GBtool">Game Boy/Chiptune tools</a></li>
+    </ul>
+    <h2>Game Boy ROM Projects</h2>
+    <table id="GBrom">
       <thead>
         <tr>
           <th>Project Title</th>
           <th>Description</th>
-          <th>Link</th>
           <th>Image</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Project 1</td>
-          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit risus sed turpis ultricies, in hendrerit magna rhoncus.</td>
-          <td><a href="#">View Project</a></td>
-          <td><img class="project-image" src="project1.jpg" alt="Project 1"></td>
+          <td><a href="https://github.com/Pegmode/Deflemask-GB-Engine">DGB Sound engine</a></td>
+          <td>Game Boy sound engine, player and converter written in assembly and C. Higher speed efficiency and better Game Boy optomization compared to regluar .vgm engines. Official <a href="https://www.deflemask.com/">Deflemask</a> ROM exporter.</td>
+          <td><img class="project-image" src="images/DGB_Scrnshot.bmp"></td>
         </tr>
         <tr>
-          <td>Project 2</td>
-          <td>Nulla facilisi. Praesent mattis enim ut massa pharetra sollicitudin. Aliquam id congue ipsum.</td>
-          <td><a href="#">View Project</a></td>
-          <td><img class="project-image" src="project2.jpg" alt="Project 2"></td>
+          <td><a href="https://github.com/Pegmode/GB2Twitter">GB2Twitter</a></td>
+          <td>Twitter client written in assembly, python and C for the Nintendo Game Boy.</td>
+          <td><img class="project-image" src="https://raw.githubusercontent.com/Pegmode/GB2Twitter/master/notes/GB2Twitter.gif" ></td>
         </tr>
         <tr>
-          <td>Project 3</td>
-          <td>Donec bibendum faucibus enim vel fermentum. Nulla facilisi. Nulla vitae ipsum eget magna ullamcorper hendrerit in eu nunc.</td>
-          <td><a href="#">View Project</a></td>
-          <td><img class="project-image" src="project3.jpg" alt="Project 3"></td>
+          <td><a href="https://github.com/Pegmode/MarineAhoyGB">MarineAhoyGB</a></td>
+          <td>Game Boy ROM written in assembly to play a visualized cover of Ahoy!! 我ら宝鐘海賊団 by Houshou Marine. Example demo for my custom sound engine.</td>
+          <td><img class="project-image" src="https://raw.githubusercontent.com/Pegmode/MarineAhoyGB/main/doc/preview1.gif" ></td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Pegmode/HorrorDemo">Horror Demo</a></td>
+          <td>WIP Game Boy demoscene demo with 3d effects.</td>
+          <td><img class="project-image" src="images/hDemoPreview.gif" ></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>University Class Projects</h2>
+    <table id="School">
+      <thead>
+        <tr>
+          <th>Project Title</th>
+          <th>Description</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/CMPUT301W21T03/Experiment-Automata">CMPUT 301 Project</a></td>
+          <td>Semester project to build an experiment logging android app in a group.</td>
+          <td><img class="project-image" src="https://raw.githubusercontent.com/CMPUT301W21T03/Experiment-Automata/main/doc/Storyboard/Screens/Add%20Experiment.png"></td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/giancarlopernudisegura/cmput404">CMPUT 404 Project</a></td>
+          <td>Semester project to build a decentralized social network with github integration.</td>
+          <td><img class="project-image" src="images/cmput404Page.png" ></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Game Boy/Chiptune tools</h2>
+    <table id="GBtool">
+      <thead>
+        <tr>
+          <th>Project Title</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/Pegmode/LSDJ2DMW">LSDJ2DMW</a></td>
+          <td>Tool to extract synth instruments and wavetables from  <a href="https://www.littlesounddj.com/lsd/index.php">Little Sound Dj (LSDj)</a> to the .dmw format</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/Pegmode/RMW2Txt">RMW2Txt</a></td>
+          <td>Tool to generate a human readable printout of instructions from a Rockman World II sound engine track for rom hacking.</td>
         </tr>
       </tbody>
     </table>
