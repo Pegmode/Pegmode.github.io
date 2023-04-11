@@ -14,7 +14,6 @@
 			position: relative;
 			cursor: pointer;
             transition: transform 0.2s ease-out;
-            z-index: 1;
 		}
 		.album img {
 			border-radius: 50%;
@@ -23,7 +22,6 @@
 			transition: filter 0.2s ease-out;
 			filter: grayscale(0%);
             object-fit: cover;
-            z-index: 1;
 		}
 		.album.hovered {
             transform: scale(1.2);
@@ -45,7 +43,6 @@
 			font-size: 14px;
 			font-weight: bold;
 			white-space: nowrap;
-            z-index: 99;
 
 		}
 
@@ -161,11 +158,13 @@
             album.addEventListener('mouseenter', e => {
                 album.classList.add('hovered');
                 overlay.style.display = 'block';
+                album.style.zIndex = 9999;
             });
 
             album.addEventListener('mouseleave', e => {
                 album.classList.remove('hovered');
                 overlay.style.display = 'none';
+                album.style.zIndex = 1;
             });
 
             album.addEventListener('mousemove', e => {
