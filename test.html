@@ -13,19 +13,26 @@
 			margin: 20px;
 			position: relative;
 			cursor: pointer;
+            transition: transform 0.2s ease-out;
+            z-index: 1;
 		}
 		.album img {
 			border-radius: 50%;
 			width: 150px;
 			height: 150px;
-			transition: transform .2s;
+			transition: filter 0.2s ease-out;
 			filter: grayscale(0%);
+            object-fit: cover;
+            z-index: 1;
 		}
-		.album img:hover {
-			transform: scale(1.1);
-			filter: grayscale(30%);
-		}
-		.album .overlay {
+		.album.hovered {
+            transform: scale(1.2);
+        }
+        .album.hovered img {
+            filter: grayscale(60%);
+        }
+
+		.overlay {
 			display: none;
 			position: absolute;
 			top: 50%;
@@ -38,11 +45,10 @@
 			font-size: 14px;
 			font-weight: bold;
 			white-space: nowrap;
+            z-index: 99;
 
 		}
-		.album:hover .overlay {
-			display: block;
-		}
+
 		.album .title {
 			margin-top: 10px;
 			font-size: 16px;
@@ -86,7 +92,7 @@
             <p>Eastern Retrograde Memories</p>
             <p>10 track Game boy Touhou cover album</p>
         </div>
-        <div class="title">Touwho??</div>
+        <div class="title">Eastern Retrograde Memories</div>
     </div>
     <br>
     <h2>Contributions to Other Albums</h2>
@@ -147,20 +153,30 @@
         <div class="title">Autumn Jam III</div>
     </div>
 	<script>
-		const albums = document.querySelectorAll('.album');
+        const albums = document.querySelectorAll('.album');
+        
         albums.forEach((album) => {
             const overlay = album.querySelector('.overlay');
+
+            album.addEventListener('mouseenter', e => {
+                album.classList.add('hovered');
+                overlay.style.display = 'block';
+            });
+
+            album.addEventListener('mouseleave', e => {
+                album.classList.remove('hovered');
+                overlay.style.display = 'none';
+            });
 
             album.addEventListener('mousemove', e => {
                 if (e.target === album) {
                     const box = album.getBoundingClientRect();
-                    const x = e.clientX - box.left;
-                    const y = e.clientY - box.top;
-
+                    const x = e.clientX - box.left + window.scrollX;
+                    const y = e.clientY - box.top + window.scrollY;
                     overlay.style.top = `${y}px`;
                     overlay.style.left = `${x}px`;
-                    }
-                });
+                }
+            });
 
             album.addEventListener('click', () => {
                 window.location.href = album.getAttribute('data-url');
