@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music</title>
+    <link rel="stylesheet" href="mainStyle.css">
+	<style>
+		body {
+			background-color: rgb(0, 0, 0);
+			color: rgb(255, 255, 255);
+		}
+		.album {
+			display: inline-block;
+			margin: 20px;
+			position: relative;
+			cursor: pointer;
+		}
+		.album img {
+			border-radius: 50%;
+			width: 150px;
+			height: 150px;
+			transition: transform .2s;
+			filter: grayscale(0%);
+		}
+		.album img:hover {
+			transform: scale(1.1);
+			filter: grayscale(30%);
+		}
+		.album .overlay {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(82, 82, 82, 0.8);
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+			font-size: 14px;
+			font-weight: bold;
+			white-space: nowrap;
+
+		}
+		.album:hover .overlay {
+			display: block;
+		}
+		.album .title {
+			margin-top: 10px;
+			font-size: 16px;
+			font-weight: bold;
+			text-align: center;
+			white-space: nowrap;
+		}
+        #navHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+      }
+      #navHeader h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      #navHeader nav a {
+        color: #f5f5f5;
+        margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+	</style>
+</head>
+<body>
+    <header id="navHeader">
+        <h1>Music</h1>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="music.html">Music</a>
+          <a href="projects.html">Projects</a>
+          <a href="#">Blog</a>
+        </nav>
+    </header>
+    <h2>My Albums</h2>
+    <div class="album" data-url="https://pegmodedc.bandcamp.com/album/eastern-retrograde-memories">
+        <img src="images/albumCovers/ERM.jpg" >
+        <div class="overlay">
+            <p>Eastern Retrograde Memories</p>
+            <p>10 track Game boy Touhou cover album</p>
+        </div>
+        <div class="title">Touwho??</div>
+    </div>
+    <br>
+    <h2>Contributions to Other Albums</h2>
+    <div class="album" data-url="https://grazepoint.bandcamp.com/album/touwho">
+        <img src="images/albumCovers/touWhoCover.jpg" >
+        <div class="overlay">
+            <p>Touwho??</p>
+            <p>Circle: Grazepoint</p>
+            <p>1. Fated Dark Road</p>
+        </div>
+        <div class="title">Touwho??</div>
+    </div>
+    <div class="album" data-url="https://violetdelta.bandcamp.com/album/absolute-zero-perfect-9">
+        <img src="images/albumCovers/absoluteZeroPerfect9Cover.jpg" >
+        <div class="overlay">
+            <p>Absolute Zero: Perfect 9</p>
+            <p>Circle: Violet Delta</p>
+            <p>1. Polar Blue</p>
+        </div>
+        <div class="title">Absolute Zero: Perfect 9</div>
+    </div>
+    <div class="album" data-url="https://battleofthebits.bandcamp.com/album/commodore-trilogy">
+        <img src="images/albumCovers/CTrilogyCover.jpg" >
+        <div class="overlay">
+            <p>Commodore Trilogy</p>
+            <p>Group: Battle of the Bits</p>
+            <p>1. 哎​吔​!​(​Aiya​!​)</p>
+        </div>
+        <div class="title">Commodore Trilogy</div>
+    </div>
+    <div class="album" data-url="https://battleofthebits.bandcamp.com/album/summer-chip-vii">
+        <img src="images/albumCovers/summerChip7.jpg" >
+        <div class="overlay">
+            <p>Summer Chip 7</p>
+            <p>Group: Battle of the Bits</p>
+            <p>1. Fungus!</p>
+        </div>
+        <div class="title">Summer Chip 7</div>
+    </div>
+    <br>
+    <div class="album" data-url="https://battleofthebits.bandcamp.com/album/summer-chip-ix">
+        <img src="images/albumCovers/SummerChip9.jpg" >
+        <div class="overlay">
+            <p>Summer Chip 9</p>
+            <p>Group: Battle of the Bits</p>
+            <p>1. Carnivals Mirage</p>
+            <p>2. Don't Leave Me Hanging</p>
+        </div>
+        <div class="title">Summer Chip 7</div>
+    </div>
+    <div class="album" data-url="https://thechiptunecafe.bandcamp.com/album/autumn-jam-iii-spooky-edition">
+        <img src="images/albumCovers/autumnJam3.jpg" >
+        <div class="overlay">
+            <p>Autumn Jam III</p>
+            <p>Group: Chiptune Cafe</p>
+            <p>1. The horror</p>
+        </div>
+        <div class="title">Autumn Jam III</div>
+    </div>
+	<script>
+		const albums = document.querySelectorAll('.album');
+        albums.forEach((album) => {
+            const overlay = album.querySelector('.overlay');
+
+            album.addEventListener('mousemove', e => {
+                if (e.target === album) {
+                    const box = album.getBoundingClientRect();
+                    const x = e.clientX - box.left;
+                    const y = e.clientY - box.top;
+
+                    overlay.style.top = `${y}px`;
+                    overlay.style.left = `${x}px`;
+                    }
+                });
+
+            album.addEventListener('click', () => {
+                window.location.href = album.getAttribute('data-url');
+            });
+        });
+</script>
