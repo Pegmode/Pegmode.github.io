@@ -31,7 +31,7 @@ map.on(L.Draw.Event.CREATED, function (event) {
         }
         else{
             area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]) / 10000;
-            document.getElementById('areaHaTextbox').value = area * 1000 ;
+            document.getElementById('areaHaTextbox').value = area * 10000;
         }
         
         let carrierRate = parseFloat(document.getElementById('carrierRateTextbox').value);
