@@ -25,7 +25,15 @@ map.on(L.Draw.Event.CREATED, function (event) {
             'polygon': layer,
             'area':  L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]),//in sqr meters
         });
-        let area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]) / 10000;
+        let area = 0
+        if(document.getElementById('userAreaCheckbox').checked){
+            area = parseFloat(document.getElementById('areaHaTextbox').value) / 10000;
+        }
+        else{
+            area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]) / 10000;
+            document.getElementById('areaHaTextbox').value = area ;
+        }
+        
         let carrierRate = parseFloat(document.getElementById('carrierRateTextbox').value);
         let herbicideRate = parseFloat(document.getElementById('herbicideRateTextbox').value);
         let waterVolume = parseFloat(document.getElementById('waterTextbox').value);
@@ -35,7 +43,6 @@ map.on(L.Draw.Event.CREATED, function (event) {
 
         document.getElementById('soltionForAreaTextbox').value = requiredChemForArea ;
         document.getElementById('requiredMixingLitersTextbox').value = requiredChemForMixing ;
-        document.getElementById('areaHaTextbox').value = area ;
 
     }
 });
