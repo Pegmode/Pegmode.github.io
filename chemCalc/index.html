@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chem Spray Calc</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+  </head>
+  <body>
+    <h1>dumb chem calculator</h1>
+    <p>Note this is a REALLY rough proof of concept</p>
+    <div id="map" style="width: 800px; height: 400px;"></div>
+    <label for="carrierRateTextbox">Carrier Rate (L/Ha)</label>
+    <input type="text" id="carrierRateTextbox"><br>
+    <label for="herbicideRateTextbox">Herbicide Rate (L/Ha)</label>
+    <input type="text" id="herbicideRateTextbox"><br>
+    <label for="waterTextbox">Water in tank (L)</label>
+    <input type="text" id="waterTextbox"><br>
+    <label for="areaHaTextbox">Area (Ha)</label>
+    <input type="text" id="areaHaTextbox" readonly><br>
+    <label for="requiredMixingLitersTextbox">Required Chem For Mixing (L)</label>
+    <input type="text" id="requiredMixingLitersTextbox" readonly><br>
+    <label for="soltionForAreaTextbox">Solution required for area (L)</label>
+    <input type="text" id="soltionForAreaTextbox" readonly>
+	<script src="script.js"></script>
+  </body>
+</html>
